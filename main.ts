@@ -83,6 +83,19 @@ enum GroveJoystickKey {
     Press = 9
 }
 
+enum DistanceUnit {
+    //% block="cm"
+    cm = 1,
+    //% block="inch"
+    inch = 2,
+};
+
+enum SensorVersion {
+    //% block="1"
+    v1 = 1,
+    //% block="2"
+    v2 = 2,
+};
 
 /**
  * Functions to operate Grove module.
@@ -435,38 +448,20 @@ namespace grove {
     // adapted to Calliope mini V2 Core by M.Klein 17.09.2020
 
 
-    enum DistanceUnit {
-        //% blockIdentity="grove.distanceUnitId"
-        //% block="cm"
-        cm = 1,
-        //% blockIdentity="grove.distanceUnitId"
-        //% block="inch"
-        inch = 2,
-    };
-
-    enum SensorVersion {
-        //% blockIdentity="grove.sensorVersionId"
-        //% block="1"
-        v1 = 1,
-        //% blockIdentity="grove.sensorVersionId"
-        //% block="2"
-        v2 = 2,
-    };
-
     /**
      * Create a new driver of Grove - Ultrasonic Sensor to measure distances in cm
+     * @param sensorVersion Version of the Ultrasonic Sensor
      * @param pin signal pin of ultrasonic ranger module
      * @param unit Distance unit of the measurement, cm or inch
-     * @param sensorVersion Version of the Ultrasonic Sensor
      */
-    //% blockId=grove_ultrasonic_centimeters block="Ultrasonic Sensor version|%version at|%pin in|%unit "
+    //% blockId=grove_ultrasonic_centimeters block="Ultrasonic Sensor version|%sensorVersion at|%pin in|%unit "
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
     //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
     //% group="Ultrasonic" pin.defl=DigitalPin.C16
-    export function measureDistance(pin: DigitalPin, unit: DistanceUnit, sensorVersion: SensorVersion): number {
+    export function measureDistance(sensorVersion: SensorVersion, pin: DigitalPin, unit: DistanceUnit): number {
         let duration = 0;
         let range = 0;
-        const sensorVersionDivider = (sensorVersion == sensorVersion.v1 ? 44 : 29)
+        const sensorVersionDivider = (sensorVersion == SensorVersion.v1 ? 44 : 29)
         const distanceUnitDivider = (unit == DistanceUnit.cm ? 1 : 2.54); // V1 = 1, V2 = 2.54
 
         pins.digitalWritePin(pin, 0);
