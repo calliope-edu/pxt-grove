@@ -444,11 +444,11 @@ namespace grove {
         inch = 2,
     };
 
-    enum BoardVersion {
-        //% blockIdentity="grove.boardVersionId"
+    enum SensorVersion {
+        //% blockIdentity="grove.sensorVersionId"
         //% block="1"
         v1 = 1,
-        //% blockIdentity="grove.boardVersionId"
+        //% blockIdentity="grove.sensorVersionId"
         //% block="2"
         v2 = 2,
     };
@@ -456,15 +456,17 @@ namespace grove {
     /**
      * Create a new driver of Grove - Ultrasonic Sensor to measure distances in cm
      * @param pin signal pin of ultrasonic ranger module
+     * @param unit Distance unit of the measurement, cm or inch
+     * @param sensorVersion Version of the Ultrasonic Sensor
      */
-    //% blockId=grove_ultrasonic_centimeters block="Ultrasonic Sensor (in cm) at|%pin"
+    //% blockId=grove_ultrasonic_centimeters block="Ultrasonic Sensor version|%version at|%pin in|%unit "
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
     //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
     //% group="Ultrasonic" pin.defl=DigitalPin.C16
-    export function measureDistance(pin: DigitalPin, unit: DistanceUnit, boardVersion: BoardVersion): number {
+    export function measureDistance(pin: DigitalPin, unit: DistanceUnit, sensorVersion: SensorVersion): number {
         let duration = 0;
         let range = 0;
-        const boardVersionDivider = (boardVersion == BoardVersion.v1 ? 44 : 29)
+        const sensorVersionDivider = (sensorVersion == sensorVersion.v1 ? 44 : 29)
         const distanceUnitDivider = (unit == DistanceUnit.cm ? 1 : 2.54); // V1 = 1, V2 = 2.54
 
         pins.digitalWritePin(pin, 0);
@@ -474,7 +476,7 @@ namespace grove {
         pins.digitalWritePin(pin, 0);
         duration = pins.pulseIn(pin, PulseValue.High, 50000); // Max duration 50 ms
 
-        range = Math.round(duration * 153 / boardVersionDivider / 2 / 100 / distanceUnitDivider); // V1 = 44, V2 = 29
+        range = Math.round(duration * 153 / sensorVersionDivider / 2 / 100 / distanceUnitDivider); // V1 = 44, V2 = 29
 
         if (range > 0) distanceBackup = range;
         else range = distanceBackup;
