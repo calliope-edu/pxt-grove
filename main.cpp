@@ -1,3 +1,5 @@
+#include "pxt.h"
+
 enum RuntimeVersions {
     //%
     DAL = 0,
@@ -13,6 +15,7 @@ namespace control {
 * Returnes 
 */
 //% help=control/getRuntimeGrove
+//% blockId=get_runtime_grove block="Return board runtime"
 //% advanced=true
 int getRuntimeGrove() {
 #if MICROBIT_CODAL
