@@ -12,7 +12,7 @@ namespace control {
 /**
 * Returnes 
 */
-//% help=control/getRuntime
+//% help=control/getRuntimeGrove
 //% advanced=true
 int getRuntimeGrove() {
 #if MICROBIT_CODAL

@@ -459,7 +459,7 @@ namespace grove {
     export function measureDistance(pin: DigitalPin, unit: DistanceUnit): number {
         let duration = 0;
         let range = 0;
-        const boardVersionDivider = (control.getRuntime == RuntimeVersions.DAL ? 44 : 29) // V1 = 44, V2 = 29 
+        const boardVersionDivider = (control.getRuntimeGrove == RuntimeVersions.DAL ? 44 : 29) // V1 = 44, V2 = 29 
         const distanceUnitDivider = (unit == DistanceUnit.cm ? 1 : 2.54); // cm = 1, inch = 2.54
 
         pins.digitalWritePin(pin, 0);
