@@ -10,10 +10,12 @@
         "shims.d.ts",
         "enums.d.ts",
         "README.md",
+        "grove.h",
         "grove.cpp",
         "main.ts",
         "_locales/de/Grove-strings.json",
-        "_locales/uk/Grove-strings.json"
+        "_locales/uk/Grove-strings.json",
+        "sim/grove.ts"
     ],
     "testFiles": [
         "test.ts"
