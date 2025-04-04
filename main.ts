@@ -473,7 +473,7 @@ namespace grove {
     export function measureDistance(pin: DigitalPin, unit: DistanceUnit): number {
         let duration = 0;
         let range = 0;
-        const boardVersionDivider = (grove.isCodal() ? 29 : 44) // 1 = DAL = 44, CODAL = 29 
+        const boardVersionDivider = (true ? 29 : 44) // DAL = 44, CODAL = 29 
         const distanceUnitDivider = (unit == DistanceUnit.cm ? 1 : 2.54); // cm = 1, inch = 2.54
 
         pins.digitalWritePin(pin, 0);

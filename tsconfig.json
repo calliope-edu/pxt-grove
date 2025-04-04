@@ -3,7 +3,18 @@
         "target": "es5",
         "noImplicitAny": true,
         "outDir": "built",
-        "rootDir": "."
+        "rootDir": ".",
+        "types": []
     },
-    "exclude": ["pxt_modules/**/*test.ts"]
+    "exclude": [
+        "*/*test.ts",
+        "pxt_modules/**/*test.ts",
+        "node_modules/**/*.ts"
+    ],
+    "include": [
+        "*.ts",
+        "*/*.ts",
+        "*/*/*.ts",
+        "*/*/pxt_modules/**/*.ts"
+    ]
 }

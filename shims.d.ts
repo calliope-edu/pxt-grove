@@ -5,8 +5,9 @@ declare namespace grove {
      * Check if the runtime is Codal
      */
     //% block="Is Codal?"
-    //% group="Ultrasonic" shim=grove::isCodal
-    //% hidden=1
+    //% blockId="grove_is_codal"
+    //% group="Ultrasonic"
+    //% hidden=1 deprecated=true shim=grove::isCodal
     function isCodal(): boolean;
 }
 

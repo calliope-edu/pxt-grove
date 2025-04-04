@@ -1,5 +1,5 @@
 {
-    "name": "Grove",
+    "name": "grove",
     "version": "0.9.3",
     "description": "MakeCode package for Grove Seeed Studio modules",
     "license": "MIT",
@@ -13,14 +13,18 @@
         "grove.h",
         "grove.cpp",
         "main.ts",
-        "_locales/de/Grove-strings.json",
-        "_locales/uk/Grove-strings.json",
+        "_locales/de/grove-strings.json",
+        "_locales/uk/grove-strings.json",
         "sim/grove.ts"
     ],
     "testFiles": [
         "test.ts"
     ],
     "public": true,
+    "targetVersions": {
+        "target": "7.0.3",
+        "targetId": "calliopemini"
+    },
     "supportedTargets": [
         "calliopemini"
     ],
