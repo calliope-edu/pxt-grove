@@ -6,7 +6,7 @@ declare namespace grove {
      */
     //% block="Is Codal?"
     //% group="Ultrasonic" shim=grove::isCodal
-    //% hidden=1
+    //% hidden=1 deprecated=true
     function isCodal(): boolean;
 }
 
