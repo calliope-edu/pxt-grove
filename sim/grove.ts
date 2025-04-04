@@ -1,8 +1,12 @@
+declare namespace pxsim.grove {
+    // Declare any needed interfaces or types for simulation
+}
+
 namespace pxsim.grove {
 
-    function isCodal(): boolean {
+    export function isCodal() {
         return true;
-    };
+    }
 
 }
 
