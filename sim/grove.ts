@@ -1,6 +1,6 @@
 namespace pxsim.grove {
 
-    function isCodal(): boolean {
+    function isCodal() {
         return true;
     };
 
