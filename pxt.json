@@ -7,15 +7,10 @@
         "core": "*"
     },
     "files": [
-        "shims.d.ts",
-        "enums.d.ts",
         "README.md",
-        "grove.h",
-        "grove.cpp",
         "main.ts",
         "_locales/de/grove-strings.json",
-        "_locales/uk/grove-strings.json",
-        "sim/grove.ts"
+        "_locales/uk/grove-strings.json"
     ],
     "testFiles": [
         "test.ts"
