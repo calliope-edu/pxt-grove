@@ -1,6 +1,6 @@
 # Grove
 
-MakeCode package for for Grove Seeed Studio modules.
+Calliope mini MakeCode package for for Grove Seeed Studio modules.
 
 ## Basic usage
 
@@ -106,11 +106,9 @@ let distance = grove.measureInInches(DigitalPin.P0);
 
 ### Grove - Moisture sensor
 
-Measures the soil moisture as analog values from 0 - 1023
+Select type of moisture sensor, Seeed Grove (blue), or Calliope mini (black) depending on the sensor type you are using.
 
-```blocks
-let moisture = grove.measureMoistureAnalog(AnalogPin.C16);
-```
+Measures the soil moisture as absolute values from 0 - 1023
 
 Measures the soil moisture as a percentage from 0 - 100
 
